@@ -291,11 +291,6 @@
              return "<div class='badgeEstado relleno azul fechaIn'><i class='fa fa-calendar'></i> " + value + "</div>";
          };
 
-         //var renderReservaFecha = function (value, metadata, record, rowIndex, colIndex, store, view) {
-         //    /* $('#hidden').text() = value*/
-         //    return "<div class='badgeEstado relleno azul fechaIn'><i class='fa fa-calendar'></i> " + value + "</div>";
-         //};
-
          var columnUsuario = function (value, metadata, record, rowIndex, colIndex, store, view) {
              return "<a href=\"mailto:" + value + "\" target='_blank'>" + value + "</a>";
          }
@@ -321,26 +316,9 @@
             }, 500);
         });
 
-        /*ext.tip.quicktipmanager.init(true, { trackmouse: true });*/
-
     </script>
 
-    <!-- <ext:xscript runat="server">
-        <script type="text/javascript">
-            function esadmin() {
-                return #{hdnesadmin}.getvalue();
-            }
-
-        </script>
-    </ext:xscript>--%> -->
-
     <script type="text/javascript">
-        /*//import $ from "https://cdn.skypack.dev/jquery@3.6.0";*/
-        /**
-         * Calendario simple
-         */
-
-       
 
         function calendarioGrego(id) {
             
@@ -472,13 +450,6 @@
                         $(this).find('.res-estado').append("<i class='fa fa-info'></i> " + array[4]);
                         $(this).find('.res-ref').append("<div class='referencia'>" + Ref + "</div>");
                         $(this).addClass('check'); //Se puede quitar
-                        /*$(this).append("<div class='rellenado'></div>").css("background-color", color);*/
-                        /*<div class='badgeEstado relleno azul fechaIn'><i class='fa fa-calendar'></i> " + value + "</div>"*/
-                        
-
-                        /*.find('check').css('background-color', randomColor);*/
-                        
-
                         $(this).hover(function () {
                             $(this).addClass('activo');
                         }, function () {
@@ -490,31 +461,7 @@
                             top.addTab('Reserva - ' + Ref, 'Reserva - ' + Ref, '/Private/Intranet/Reservas/ReservasCoches/ReservasView.aspx?Id=' + Id);
                         });
 
-
-                        //$('#buttons1 button:nth-child(n+5):nth-child(-n+8)')
-                        //    .on('mouseover', function () {
-
-                        //    })
-                        //    .on('mouseout', function () {
-                        //        $(this).stop(true).animate({
-                        //            borderWidth: '0px',
-                        //            color: '#ebc000'
-                        //        }, duration, 'easeOutSine');
-                        //    });
-
                     }
-
-                    //if ($(this).hasClass("libre")){
-
-                    //    $(this).hover(function () {
-                    //        $(this).addClass('activo');
-                    //    }, function () {
-                    //        $(this).removeClass('activo');
-                    //    }
-                    //    )
-
-                       
-                    //};
                 
                 })
 
@@ -570,22 +517,6 @@
                                             reject("Fecha Fin inferior a Inicio");
                                         }
 
-                                        
-                                        //const promise2 = new Promise((resolve, reject) => {
-                                             
-                                        //     resolve()
-                                        //});
-                                        //promise2.then(() => cleanHiddenData());
-                                        ///*limpiar($("#clase1").text(), clases[1]);*/
-                                        //reject('Promise is rejected');
-                                        //}
-
-                                        //if (pintar($("#clase1").text(), clases[1])) {
-                                        //    setTimeout(resolve, 1200)
-                                        //} else {
-                                        //    limpiar($("#clase1").text(), clases[1]);
-                                        //    reject('Promise is rejected');
-                                        //}
                                     });
                                     
                                     promise1.then(
@@ -611,10 +542,6 @@
                 })
 
             }
-
-            //function getId() {
-            //    $("#reservasDivs")
-            //}
             
             // Limpia todos los elementos del calendario
             this.clearData = function () {
@@ -660,10 +587,6 @@
                     }
                     objeto.imprime(objeto.dia, objeto.periodoActual.mes, objeto.periodoActual.anio);
 
-                    //let anno = 2022;
-                    //let mes = 5;
-                    //let dia = 29;
-
                     const promise = new Promise((resolve, reject) => {
 
                         var cont = 0;
@@ -705,8 +628,6 @@
 
                     promise
                         .then(() => miCalendario.updateCells());
-                        /*.then(() => pintarStorage());*/
-
                 });
             }
         }
@@ -733,8 +654,6 @@
                     pintar($("#clase1").text(), $("#clase2").text());
 
                     $("#cell_" + aniofinal + '_' + mesfinal + '_' + diafinal).append("<div class='seleccion fin'> <i class='fa fa-check'></i> Fecha Fin</div>");
-                    /*$("#cell_" + aniofinal + '_' + mesfinal + '_' + diafinal).css("background-color", "#A1D8C6");*/
-
                 }                                    
             }                 
         }
@@ -780,16 +699,9 @@
                 var date2 = new Date(fecha2Array.join('/'));
             }
 
-            
-            //var date1 = new Date(fecha1);
-            //var date2 = new Date(fecha2);
-            //console.log(date1)
-            //console.log(date2)
-
             let flag = true;
 
             $('.reservasDivs').each(function () {
-                /*  console.log($(this).text())*/
                 var elements = $(this).text().split(' ');
                 var reorder = elements[1].split('/'); // reordenar la fecha de 03/05/2022 a 05/03/2022 , porque falla el new Date(), ya que crea (mes/dia/año)
                 var save = reorder[0];
@@ -819,13 +731,7 @@
             var dia = Number(fecha[2])
             var correcto = true
 
-            //if ($.trim($("#cell_" + anio + '_' + mes + '_' + dia).find('p').html()) == '') {
-            //    correcto = false;
-            //    return correcto;
-            //}
-            //else {
-
-                let i = calcularDias(fecha1, fecha2) + 1
+               let i = calcularDias(fecha1, fecha2) + 1
                 while (i >= 0) {
 
                     if (dia == (diaFinalMes(mes) - 1)) {
@@ -849,17 +755,7 @@
                         dia++;
                     }
 
-                    //if ($.trim($("#cell_" + anio + '_' + mes + '_' + dia).find('p').html()) == '') {
-                    //    correcto = false;
-                    //    break;
-                    //}
-
                     i--;
-
-            /*}*/
-
-           
-
             };
 
             return correcto;
@@ -880,27 +776,14 @@
             let mesCount = 0;
             let i = calcularDias(clase1, clase2) - 1;
             let correcto = true;
-
-
-
-            //if (mesfinal == mes && aniofinal == anio) {
-            //    i = calcularDias(clase1, clase2) - 2 //Ajuste , para que se pinte el dia final de color más oscuro
-            //}
-            //else {
-            //    i = calcularDias(clase1, clase2) - 1 //Se calcula los dias que hay entre las fechas y se resta 1, para quitar el dia fin
-            //}
             
             while (i > 0) {
 
-                /*if ($.trim($("#cell_" + anio + '_' + mes + '_' + (dia - 1)).find('p').html()) !== '') {*/
 
                     $("#cell_" + anio + '_' + mes + '_' + dia).append("<div class='seleccion'></i></div>");
                     $("#cell_" + anio + '_' + mes + '_' + dia).css("background-color", "#CFEDE3");
 
                     if (dia == (diaFinalMes(mes))) {
-                        //if ((diaFinalMes(mes)) == 32) {
-                        //    i++;
-                        //}
                         mes++;
                         mesCount++;
                         dia = 1;
@@ -918,20 +801,8 @@
                         i--;
                     }
 
-                
-                //else {
-                //    correcto = false;
-                //    break;
-                //}
-
-               
-                //if (i == 0) {
-                //    /*$("#cell_" + aniofinal + '_' + mesfinal + '_' + diafinal).append("<div class='seleccion fin'> <i class='fa fa-check'></i> Fecha Fin</div>");*/
-                //    $("#cell_" + aniofinal + '_' + mesfinal + '_' + diafinal).css("background-color", "#A1D8C6");
-                //}
             };
 
-            /*$("#cell_" + aniofinal + '_' + mesfinal + '_' + diafinal).append("<div class='seleccion fin'> <i class='fa fa-check'></i> Fecha Fin</div>");*/
             $("#cell_" + aniofinal + '_' + mesfinal + '_' + diafinal).css("background-color", "#A1D8C6");
 
             return correcto;
@@ -970,12 +841,9 @@
             var mesfinal = Number(fecha2[1])
             var diafinal = Number(fecha2[2])
 
-            //$("#cell_" + anio + '_' + mes + '_' + dia).css("background-color", "white")
-            //$('.inicio').remove();
             let mesCount = 0;
             let i = calcularDias(clase1, clase2)   //ANTES ESTABA A + 1 , PERO ME BORRA LA CELDA DE MANTENIMIENTO 
             while (i >= 0) {
-                /*if (!$("#cell_" + anio + '_' + mes + '_' + dia).hasClass("mantenimiento")){*/    //PARA QUE NO ME BORRE EL DIA DE MANT, COMPRUEBO QUE NO TENGA LA CLASE
                     $("#cell_" + anio + '_' + mes + '_' + dia).find('.seleccion').remove();
                     $("#cell_" + anio + '_' + mes + '_' + dia).css("background-color", "white")
 
@@ -996,7 +864,6 @@
                     } else {
                         i--;
                     }
-                /*}*/
             };
 
         }
@@ -1015,8 +882,6 @@
         var miCalendario = new calendarioGrego('calendarview').init();
         $(document).ready(function () {
 
-            //var colores = arrayColores();
-            //console.log(colores)
             miCalendario.imprime();
             const promise = new Promise((resolve, reject) => {
 
@@ -1043,8 +908,6 @@
 
         function arrayColores() {
 
-            /*var numres = $("#numRes").innerHtml();*/
-            /*console.log(numres);*/
             var colores = new Array();
 
             for (let j = 0; j < 20; j++) {
@@ -1088,24 +951,14 @@
             $("#cell_" + anioAnt + '_' + mesAnt + '_' + diaAnt).find('.res').append("<div class='mantenimiento'><i class='fa fa-wrench'></i>  Mantenimiento PRE</div>");
             $("#cell_" + anioAnt + '_' + mesAnt + '_' + diaAnt).addClass('mantenimiento');
 
-            //$("#cell_" + anioAnt + '_' + mesAnt + '_' + diaAnt).css("background-color", "#E7E7E7")
-            //$("#cell_" + anioPost + '_' + mesPost + '_' + diaPost).css("background-color", "#E7E7E7")
-
-           /* var dias = array[2];*/
             let mesCount = 0;
             dias = calcularDias2(array[1], array[2])
 
             while (dias > 0) {
 
-                /*if ($.trim($("#cell_" + anio + '_' + mes + '_' + (dia - 1)).find('p').html()) !== '') {*/
-
                 miCalendario.insertData(anio, mes, dia, array);
-                /*$("#cell_" + anio + '_' + mes + '_' + dia).css("background-color", "#CFEDE3");*/
 
                 if (dia == (diaFinalMes(mes))) {
-                    //if ((diaFinalMes(mes)) == 32) {
-                    //    i++;
-                    //}
                     mes++;
                     mesCount++;
                     dia = 1;
@@ -1122,43 +975,8 @@
                 } 
                 dias--;
                 
-
-
-                //else {
-                //    correcto = false;
-                //    break;
-                //}
-
-
-                //if (i == 0) {
-                //    /*$("#cell_" + aniofinal + '_' + mesfinal + '_' + diafinal).append("<div class='seleccion fin'> <i class='fa fa-check'></i> Fecha Fin</div>");*/
-                //    $("#cell_" + aniofinal + '_' + mesfinal + '_' + diafinal).css("background-color", "#A1D8C6");
-                //}
             };
 
-
-            //for (let j = 0; j < dias; j++) {
-
-            //    //if (dia == 31) {
-            //    //    miCalendario.insertData(anno, mes, dia, array);
-            //    //}
-
-            //        if (dia == (diaFinalMes(mes))) {
-            //            dia = 1;
-            //            mes++;
-            //            if (mes == 12) {
-            //                anno++;
-            //                mes = 0;
-            //                console.log(anno + mes)
-            //            } 
-            //            //else {
-            //            //    mes++;
-            //            //}
-            //        }
-            //        miCalendario.insertData(anno, mes, dia ,array);
-            //        dia++;
-            //}
-            /*miCalendario.updateCells();*/
         }
 
         function diaAnterior(dia,mes,anio) {
@@ -1214,22 +1032,6 @@
             return fin
         }
 
-        //function diaFinalMes2(mes) {
-        //    let fin
-
-        //    if (mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12) {
-        //        fin = 32
-        //    }
-        //    else if (mes == 2) {
-        //        fin = 29
-        //    }
-        //    else {
-        //        fin = 31
-        //    }
-
-        //    return fin
-        //}
-
         function reorderDate(fechaIn) {
 
             var reorder = fechaIn.split('/'); // reordenar la fecha de 03/05/2022 a 05/03/2022 , porque falla el new Date(), ya que crea (mes/dia/año)
@@ -1246,16 +1048,9 @@
 
 
         function calcularDias2(fecha1, fecha2) {                //Probar a cambiar por total dias en el servidor
-            //let date = new Date().toDateString();
-            /* console.log(date);*/
 
             var fechaini = reorderDate(fecha1);
             var fechafin = reorderDate(fecha2);
-
-            //var fechaini = new Date(fecha1);
-            //var fechafin = new Date(fecha2);
-            //fechafin.setMonth(fechaini.getMonth() + 4)
-
             var diasdif = fechafin.getTime() - fechaini.getTime();
             var contdias = Math.round(diasdif / (1000 * 60 * 60 * 24) + 1);
             console.log(fechaini.toDateString())
@@ -1268,8 +1063,6 @@
        
 
         function calcularDias(fecha1,fecha2) {
-            //let date = new Date().toDateString();
-            /* console.log(date);*/
 
             var arrayfecha1 = fecha1.split('/');
             arrayfecha1[1] = Number(arrayfecha1[1]) + 1;
